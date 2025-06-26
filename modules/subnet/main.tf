@@ -20,6 +20,6 @@ resource "oci_core_subnet" "subnet" {
   count = var.create_subnet ? 1 : 0
 
   lifecycle {
-    ignore_changes = [freeform_tags, defined_tags]
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
   }
 }

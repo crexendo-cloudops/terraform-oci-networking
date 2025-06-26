@@ -14,7 +14,7 @@ resource "oci_core_internet_gateway" "gateway" {
   count = var.create_internet_gateway ? 1 : 0
 
   lifecycle {
-    ignore_changes = [freeform_tags, defined_tags]
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
   }
 }
 
@@ -31,7 +31,7 @@ resource "oci_core_nat_gateway" "gateway" {
   count = var.create_nat_gateway ? 1 : 0
 
   lifecycle {
-    ignore_changes = [freeform_tags, defined_tags]
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
   }
 }
 
@@ -50,7 +50,7 @@ resource "oci_core_service_gateway" "gateway" {
   count = var.create_service_gateway ? 1 : 0
 
   lifecycle {
-    ignore_changes = [freeform_tags, defined_tags]
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
   }
 }
 
@@ -66,6 +66,6 @@ resource "oci_core_local_peering_gateway" "gateway" {
   count = var.create_local_peering_gateway ? 1 : 0
 
   lifecycle {
-    ignore_changes = [freeform_tags, defined_tags]
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
   }
 }
