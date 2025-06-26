@@ -61,7 +61,7 @@ module "oci-networking" {
 
 ```hcl
 module "vcn" {
-  source = "github.com/oracle-quickstart/terraform-oci-networking//modules/vcn?ref=0.3.2"
+  source = "github.com/crexendo-cloudops/terraform-oci-networking//modules/vcn?ref=ignore_tags"
 
   # Oracle Cloud Infrastructure Tenancy and Compartment OCID
   compartment_ocid = var.compartment_ocid
@@ -81,7 +81,7 @@ module "vcn" {
 
 module "subnets" {
   for_each = { for map in local.subnets : map.subnet_name => map }
-  source   = "github.com/oracle-quickstart/terraform-oci-networking//modules/subnet?ref=0.3.2"
+  source   = "github.com/crexendo-cloudops/terraform-oci-networking//modules/subnet?ref=ignore_tags"
 
   # Oracle Cloud Infrastructure Tenancy and Compartment OCID
   compartment_ocid = var.compartment_ocid
