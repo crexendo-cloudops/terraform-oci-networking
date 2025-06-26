@@ -15,6 +15,6 @@ resource "oci_core_vcn" "main" {
   count = var.create_new_vcn ? 1 : 0
 
   lifecycle {
-    ignore_changes = [freeform_tags, defined_tags]
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
   }
 }
