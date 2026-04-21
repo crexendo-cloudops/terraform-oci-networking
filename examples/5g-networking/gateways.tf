@@ -2,7 +2,7 @@
 # Module: Gateways
 ################################################################################
 module "gateways" {
-  source = "github.com/crexendo-cloudops/terraform-oci-networking//modules/gateways?ref=ignore_tags"
+  source = "github.com/crexendo-cloudops/terraform-oci-networking//modules/gateways?ref=main"
 
   # Oracle Cloud Infrastructure Tenancy and Compartment OCID
   compartment_ocid = local.vcn_compartment_ocid

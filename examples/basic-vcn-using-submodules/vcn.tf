@@ -1,5 +1,5 @@
 module "vcn" {
-  source = "github.com/crexendo-cloudops/terraform-oci-networking//modules/vcn?ref=ignore_tags"
+  source = "github.com/crexendo-cloudops/terraform-oci-networking//modules/vcn?ref=main"
 
   # Oracle Cloud Infrastructure Tenancy and Compartment OCID
   compartment_ocid = var.compartment_ocid

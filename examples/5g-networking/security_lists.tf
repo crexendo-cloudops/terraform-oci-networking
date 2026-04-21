@@ -3,7 +3,7 @@
 ################################################################################
 module "security_lists" {
   for_each = { for map in local.security_lists : map.security_list_name => map }
-  source   = "github.com/crexendo-cloudops/terraform-oci-networking//modules/security_list?ref=ignore_tags"
+  source   = "github.com/crexendo-cloudops/terraform-oci-networking//modules/security_list?ref=main"
 
   # Oracle Cloud Infrastructure Tenancy and Compartment OCID
   compartment_ocid = local.vcn_compartment_ocid
