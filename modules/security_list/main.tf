@@ -104,7 +104,8 @@ resource "oci_core_security_list" "security_list" {
   }
 
   lifecycle {
-    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"], egress_security_rules, ingress_security_rules]
+    # Rule changes apply in place; upstream ignored them (see oracle-quickstart/terraform-oci-networking#13)
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
   }
 
   count = var.create_security_list ? 1 : 0
