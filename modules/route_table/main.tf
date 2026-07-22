@@ -20,4 +20,8 @@ resource "oci_core_route_table" "route_table" {
   }
 
   count = var.create_route_table ? 1 : 0
+
+  lifecycle {
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
+  }
 }

@@ -18,4 +18,8 @@ resource "oci_core_subnet" "subnet" {
   defined_tags               = var.subnet_tags.definedTags
 
   count = var.create_subnet ? 1 : 0
+
+  lifecycle {
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
+  }
 }

@@ -13,4 +13,8 @@ resource "oci_core_vcn" "main" {
   ipv6private_cidr_blocks = var.ipv6private_cidr_blocks
 
   count = var.create_new_vcn ? 1 : 0
+
+  lifecycle {
+    ignore_changes = [defined_tags["Oracle-Tags.CreatedBy"], defined_tags["Oracle-Tags.CreatedOn"]]
+  }
 }
